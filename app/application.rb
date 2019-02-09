@@ -27,7 +27,7 @@ class Application
     
      elsif req.path.match(/add/)
       item = req.params["GET"]
-      resp.write handle_search(search_term)
+      resp.write add_item_to_cart(item)
       
   end
 
@@ -37,5 +37,14 @@ class Application
     else
       return "Couldn't find #{search_term}"
     end
+  end
+  
+  def add_item_to_cart(item)
+    if @@items.include?(item)
+      @@cart << item 
+      return "Your cart now includes #{@@cart}."
+    else 
+      return "#{item} does not exist."
+    end 
   end
 end

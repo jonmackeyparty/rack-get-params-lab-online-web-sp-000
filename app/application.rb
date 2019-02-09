@@ -23,6 +23,12 @@ class Application
     if req.path.match(/cart/)
       @@cart.each do |item|
         resp.write "#{item}\n"
+    end
+    
+     elsif req.path.match(/add/)
+      search_term = req.params["GET"]
+      resp.write handle_search(search_term)
+      
   end
 
   def handle_search(search_term)

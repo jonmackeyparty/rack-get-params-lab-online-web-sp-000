@@ -46,7 +46,7 @@ class Application
       @@cart << item 
       return "Your cart now includes #{@@cart}."
     else 
-      return "#{item} does not exist."
+      return "We don't have that item"
     end 
   end
 end

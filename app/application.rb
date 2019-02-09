@@ -44,6 +44,7 @@ class Application
   end
   
   def add_item_to_cart(item)
+    binding.pry
     if @@items.include?(item)
       @@cart << item 
       return "added #{item}"

@@ -27,13 +27,7 @@ class Application
     end
 
     resp.finish
-    
-   
-    
-     elsif req.path.match(/add/)
-      item = req.params["GET"]
-      resp.write add_item_to_cart(item)
-      
+
   end
 
   def handle_search(search_term)
